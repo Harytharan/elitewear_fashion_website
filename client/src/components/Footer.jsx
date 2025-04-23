@@ -102,13 +102,13 @@ export default function Footer() {
           <h1 className=" font-medium text-xl pb-4 pt-5 md:pt-0">Contact Us</h1>
           <nav className=" flex flex-col gap-2">
             <Link to="/" spy={true} smooth={true} duration={500}>
-              123 Elm Street, Suite 456 Springfield, IL 62701 United States
+              No.123, Station road, Jaffna.
             </Link>
             <Link to="/" spy={true} smooth={true} duration={500}>
-              fashion@style.com
+              elitewear@gmail.com
             </Link>
             <Link to="/" spy={true} smooth={true} duration={500}>
-              +123-456-7890
+              021 222 1110
             </Link>
           </nav>
         </div>

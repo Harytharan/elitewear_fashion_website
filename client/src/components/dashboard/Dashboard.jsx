@@ -9,7 +9,7 @@ const data = {
   datasets: [
     {
       label: "Sales",
-      data: [300, 400, 200, 500, 700],
+      data: [500, 400, 200, 500, 700],
       backgroundColor: "#a98467",
     },
   ],

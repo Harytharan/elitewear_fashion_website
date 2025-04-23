@@ -226,10 +226,10 @@ export default function OrderManagement() {
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <PDFDownloadLink
-        document={<SalesReport expandedOrders={filteredOrder} />}
-        fileName="filtered-orders.pdf"
-      >
+        <PDFDownloadLink
+          document={<SalesReport expandedOrders={filteredOrder} />}
+          fileName="filtered-orders.pdf"
+        >
         {({ loading }) => (
           <button
             className="bg-black text-white px-4 py-2 rounded-md shadow hover:bg-ExtraDarkColor transition-colors duration-300 ml-5"

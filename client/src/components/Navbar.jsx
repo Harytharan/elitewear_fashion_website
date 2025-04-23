@@ -66,7 +66,7 @@ export default function Navbar() {
 
           {/* Desktop Nav Elements */}
           <nav className="hidden lg:flex flex-row items-center text-lg font-semibold gap-8 text-ExtraDarkColor">
-            {["home", "shop", "features", "products", "review"].map((item) => (
+            {["home", "shop", "products", "review"].map((item) => (
               <Link
                 key={item}
                 to={item}
