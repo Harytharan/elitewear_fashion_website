@@ -49,7 +49,7 @@ export default function SignUp({ onClose, onSignIn }) {
 
     try {
       setLoading(true);
-      const response = await fetch("/api/auth/sendotp", {
+      const response = await fetch("/api/auth/sendotp", { 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
