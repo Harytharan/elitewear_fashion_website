@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { SketchPicker } from "react-color";
-import { useNavigate } from "react-router-dom"; // Make sure to use this hook for navigation
+import { useNavigate } from "react-router-dom"; // Make sure to use this hook for navigation 
 import { MdDeleteForever } from "react-icons/md";
 import { useSelector } from "react-redux";
 import "tailwindcss/tailwind.css";
