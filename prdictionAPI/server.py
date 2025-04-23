@@ -5,7 +5,7 @@ import joblib
 app = Flask(__name__)
 CORS(app)
 
-model = joblib.load('linear_regression_model.pkl')
+model = joblib.load('linear_regression_model.pkl') 
 
 EXPECTED_FEATURES = 12
 
