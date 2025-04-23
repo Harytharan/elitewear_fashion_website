@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaLock, FaSpinner } from "react-icons/fa";
 import Swal from "sweetalert2";
 
+//modify the otp validation
+
 export default function OtpValidationPopup({ onClose, onVerifyOtp }) {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [loading, setLoading] = useState(false);
