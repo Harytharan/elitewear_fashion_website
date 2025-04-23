@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaEnvelope, FaLock, FaTimes } from "react-icons/fa";
 import OAuth from "./OAuth";
-
+//sign page 
 export default function SignIn({ onClose, onSignUp }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "" });
