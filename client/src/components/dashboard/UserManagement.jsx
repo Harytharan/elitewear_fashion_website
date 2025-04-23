@@ -8,7 +8,7 @@ const users = [
   { id: 2, name: "Jane Smith", email: "jane@example.com", role: "User" },
 ];
 
-export default function UserManagement() {
+export default function UserManagement() { 
   return (
     <motion.div
       className=" p-10 pl-20 bg-PrimaryColor min-h-screen"

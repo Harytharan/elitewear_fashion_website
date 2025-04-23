@@ -4,8 +4,8 @@ import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "harytharan24@gmail.com",  // Change to your new email address
-    pass: "mjhd lnar hjsi rwnd", // Use the correct password for the new email
+    user: "harytharan24@gmail.com",  
+    pass: "mjhd lnar hjsi rwnd", 
   },
 });
 
