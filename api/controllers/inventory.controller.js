@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 //GET all inventories
 export const getInventories = async (req, res) => {
-  const inventories = await Inventory.find({}).sort({ createdAt: -1 });
+  const inventories = await Inventory.find({}).sort({ createdAt: -1 }); 
 
   res.status(200).json(inventories);   
 };
