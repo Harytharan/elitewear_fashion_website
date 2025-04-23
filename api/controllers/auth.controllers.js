@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 const JWT_SECRET =  process.env.JWT_SECRET ||"a3d8c1f7e2b49c9e5f7f86b1e7a3d8c1f7e2b49c9e5f7f86b1e7a3d8c1f7e2b49"; // Replace with a strong random key
 
 
-// Helper function to ensure the JWT secret is available
+// Helper function to ensure the JWT secret is availiabel
 const getJwtSecret = () => {
   const secret = JWT_SECRET;
   if (!secret) {
