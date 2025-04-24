@@ -31,7 +31,7 @@ export const sendOTP = (req, res) => {
   otpMap.set(email, otp); // Store OTP for the email
 
   const mailOptions = {
-    from: "harytharan24@gmail.com",  // Change the sender email here
+    from: "harytharan24@gmail.com",  // sender email
     to: email,
     subject: "Email Verification OTP",
     html: `
