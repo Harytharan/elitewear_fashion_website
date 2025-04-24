@@ -115,7 +115,7 @@ const DiscountTable = () => {
     handleClosePopup();
   };
 
-  // Handle view more details
+  // Handle view more details.
   const handleViewMoreClick = (discount) => {
     setViewMoreDiscount(discount);
   };
