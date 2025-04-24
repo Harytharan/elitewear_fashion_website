@@ -62,7 +62,7 @@ function DiscountTable() {
     const urlParams = new URLSearchParams(searchData);
     navigate(`/manager/discount-management?${urlParams.toString()}`);
   };
-
+//
   const handleDelete = async (promotionId) => {
     const result = await Swal.fire({
       title: "Are you sure?",
