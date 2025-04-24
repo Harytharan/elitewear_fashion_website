@@ -1,3 +1,4 @@
+//Data
 export const sampleSalesData = [
   {
     itemId: "FT001",
