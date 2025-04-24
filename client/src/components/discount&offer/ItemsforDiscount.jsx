@@ -41,7 +41,7 @@ export default function ItemsforDiscount() {
     setFilteredInventories(filtered);
   };
 
-  // Handle the "Add Discount" button click
+  // Handle the "Add Discount" button click.
   const handleAddDiscount = (inventory) => {
     if (!inventory.haveOffer) {
       navigate("/manager/add-discount", {
