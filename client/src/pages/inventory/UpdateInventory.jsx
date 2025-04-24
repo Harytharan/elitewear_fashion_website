@@ -146,7 +146,7 @@ function UpdateInventory({ currentUser }) {
           icon: "error",
           title: "Invalid Input",
           text: "Supplier Contact must be a number and contain up to 10 digits.",
-        });
+        });//add phone number validation +94
       }
     } else {
       setFormData({ ...formData, [name]: value });
