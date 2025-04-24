@@ -198,7 +198,7 @@ function CreateInventory({ currentUser }) {
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "Reorder Level must be greater than zero.",
+          text: "Reorder Level must be greater than zero.",//
         });
         setLoading(false);
         return;
