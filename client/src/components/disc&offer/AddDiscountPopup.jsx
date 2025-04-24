@@ -53,7 +53,7 @@ export default function AddDiscountPopup({ item, onClose, onSave }) {
       !conditions ||
       !description
     ) {
-      Swal.fire("Missing Fields", "Please fill out all fields.", "error");
+      Swal.fire("Missing Fields", "Please fill out all fields.", "error");//add the missing fields error message
       return false;
     }
 
