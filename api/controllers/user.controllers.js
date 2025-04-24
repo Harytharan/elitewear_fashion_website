@@ -1,7 +1,7 @@
 import User from "../models/user.model.js";
 import { errorHandler } from "../utils/error.js";
 import bcryptjs from "bcryptjs";
-
+//user controller 
 import mongoose from "mongoose";
 
 export const test = (req, res) => {
@@ -93,7 +93,7 @@ export const getUserSearch = async (req, res, next) => {
   }
 };
 
-//get all Users
+//get all Users from the database
 export const getAllUsers = async (req, res) => {
   const users = await User.find({}).sort({ createdAt: -1 });
 
