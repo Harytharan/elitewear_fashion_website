@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router-dom";
 import { FiArrowLeft, FiLoader, FiPercent, FiDollarSign } from "react-icons/fi";
 import { motion } from "framer-motion";
-
+//
 export default function UpdateOffer() {
   const { id } = useParams();
 
