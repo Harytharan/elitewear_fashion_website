@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiArrowLeft, FiLoader } from "react-icons/fi";
 import { MdLocalOffer } from "react-icons/md";
-import { BsPercent } from "react-icons/bs";
+import { BsPercent } from "react-icons/bs";//
 import ClipLoader from "react-spinners/ClipLoader";
 
 export default function AddOffer() {
@@ -72,7 +72,7 @@ export default function AddOffer() {
     const endDate = new Date(formData.endDate);
 
     if (startDate < today) {
-      setLoading(false);
+      setLoading(false);//add error message
       Swal.fire({
         icon: "error",
         title: "Invalid Date",
