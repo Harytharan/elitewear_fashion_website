@@ -100,7 +100,7 @@ export const getAllUsers = async (req, res) => {
   res.status(200).json(users);
 };
 
-//delete a user by id
+//delete a user by id, or delete the user
 export const deleteUserByid = async (req, res) => {
   const { id } = req.params;
 
