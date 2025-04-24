@@ -55,7 +55,7 @@ const DiscountTable = () => {
     }
   };
 
-  // Download report as CSV
+  // Download report as CSV.
   const downloadReport = () => {
     const csvContent = [
       [
