@@ -245,6 +245,7 @@ function CreateInventory({ currentUser }) {
           title: "Error",
           text: `${data.message}`,
         });
+        //add successfull message
       } else {
         Swal.fire({
           icon: "success",
