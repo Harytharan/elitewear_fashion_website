@@ -265,7 +265,7 @@ function CreateInventory({ currentUser }) {
     }
   };
   console.log("form", formData);
-  // add inventory
+  // add inventory.
   return (
     <div className="max-w-lg mx-auto p-6 mt-10 bg-PrimaryColor rounded-lg shadow-md">
       <h1 className="text-2xl font-bold text-center text-ExtraDarkColor mb-6">
