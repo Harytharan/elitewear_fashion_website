@@ -96,7 +96,7 @@ function InventoryTable() {
     });
   };
 
-  return (
+  return (// add side bar
     <div
       className="dashboard"
       style={{ background: "#dde6ed", padding: "20px" }}
