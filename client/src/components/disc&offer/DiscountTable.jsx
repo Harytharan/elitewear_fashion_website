@@ -38,7 +38,7 @@ const DiscountTable = () => {
       confirmButtonText: "Yes, delete it!",
     });
 
-    // If the user confirms, proceed with deletion
+    // If the user confirms, proceed with deletio
     if (result.isConfirmed) {
       try {
         await axios.delete(`/api/discount/delete/${id}`);
