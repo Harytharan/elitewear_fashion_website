@@ -9,7 +9,7 @@ import {
   test,
   updateUser,
 } from "../controllers/user.controllers.js";
-import { veryfyTocken } from "../utils/verifyUser.js";
+import { veryfyTocken } from "../utils/verifyUser.js"; //verify the token
 
 const router = express.Router();
 
