@@ -117,7 +117,7 @@ export const deleteUserByid = async (req, res) => {
   res.status(200).json(user);
 };
 
-// Function to add a new user
+// Function to add a new user,  add the new user into database
 export const addUser = async (req, res) => {
   const { firstname, lastname, username, email, password, usertype, avatar } =
     req.body;
