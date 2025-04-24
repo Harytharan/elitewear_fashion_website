@@ -26,7 +26,7 @@ export default function InventoryReport({ inventory }) {
       .slice(0)
       .reverse()
       .map((inventory, index) => {
-        const inventorydata = [
+        const inventorydata = [//inventory table items
           index + 1,
           inventory.ItemName,
           inventory.Category,
