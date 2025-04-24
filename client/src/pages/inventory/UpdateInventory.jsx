@@ -61,7 +61,7 @@ function UpdateInventory({ currentUser }) {
       (files ?? []).length + formData.imageUrls.length < 4
     ) {
       setUploading(true);
-      setFileUploadError(false);//set file update hook
+      setFileUploadError(false);
       const promises = [];
 
       for (let i = 0; i < files.length; i++) {
