@@ -1,7 +1,7 @@
 // ItemTable.js
 import React, { useState } from "react";
 import AddDiscountPopup from "./AddDiscountPopup";
-import items from "./items";//
+import items from "./items";
 
 export default function ItemTable() {
   const [selectedItem, setSelectedItem] = useState(null);
