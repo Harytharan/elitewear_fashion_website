@@ -1,3 +1,4 @@
+//otp route
 import express from "express";
 import { sendOTP, verifyOTP } from "../controllers/otp.controller.js";
 
