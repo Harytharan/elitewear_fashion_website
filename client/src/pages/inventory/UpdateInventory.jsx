@@ -33,7 +33,7 @@ function UpdateInventory({ currentUser }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const [sizeInput, setSizeInput] = useState(""); // State to manage size input
+  const [sizeInput, setSizeInput] = useState(""); // State to manage size input.
   const [colorInput, setColorInput] = useState(""); // State to manage color input
   const [fileUploadError, setFileUploadError] = useState(false); //A boolean to track if there's an error during file upload.
   const [filePerc, setFilePerc] = useState(0); // A number to track the upload progress of each file.
