@@ -62,7 +62,7 @@ function InventoryTable() {
   };
 
   const handleDelete = async (inventoryId) => {
-    Swal.fire({
+    Swal.fire({//delete section
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
@@ -73,7 +73,7 @@ function InventoryTable() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`/api/inventories/${inventoryId}`, {
+          const res = await fetch(`/api/inventories/${inventoryId}`, {//
             method: "DELETE",
           });
           const data = await res.json();
