@@ -121,7 +121,7 @@ function DiscountTable() {
       confirmButtonColor: "#d4a373",
     });
   };
-
+//
   return (
     <motion.div
       initial={{ opacity: 0 }}
