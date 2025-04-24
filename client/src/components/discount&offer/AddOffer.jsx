@@ -46,7 +46,7 @@ export default function AddOffer() {
           updatedFormData.price,
           updatedFormData.discountPercentage
         );
-        setFormData({ ...updatedFormData, finalPrice });
+        setFormData({ ...updatedFormData, finalPrice });//
       } else {
         Swal.fire({
           icon: "error",
