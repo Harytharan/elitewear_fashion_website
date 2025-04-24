@@ -251,7 +251,7 @@ function CreateInventory({ currentUser }) {
           title: "Success",
           text: "Inventory added successfully",
         });
-        navigate(`/manager/inventory-management`); // Navigate to the newly created inventory item
+        navigate(`/manager/inventory-management`); // Navigate to the newly created inventory ite
       }
     } catch (error) {
       setError(error.message);
