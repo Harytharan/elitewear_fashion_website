@@ -87,7 +87,7 @@ function DiscountTable() {
 
         const data = await res.json();
 
-        // Check if response contains success key
+        // Check if response contains success key.
         if (res.status === 200) {
           Swal.fire("Deleted!", "The promotion has been deleted.", "success");
           setPromotions((prev) =>
