@@ -24,7 +24,7 @@ export default function Dashboard() {
       transition={{ duration: 0.5 }}
     >
       <h1 className="text-3xl font-bold text-ExtraDarkColor mb-6">
-        Dashboard Overview
+        Dashboard Overview!
       </h1>
       <div className="bg-SecondaryColor p-8 rounded-lg shadow-md">
         <Bar data={data} />
