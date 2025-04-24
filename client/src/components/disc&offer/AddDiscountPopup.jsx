@@ -75,7 +75,7 @@ export default function AddDiscountPopup({ item, onClose, onSave }) {
       };
 
       try {
-        const response = await fetch("/api/discount/add", {
+        const response = await fetch("/api/discount/add", {//
           method: "POST",
           headers: {
             "Content-Type": "application/json",

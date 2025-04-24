@@ -25,7 +25,7 @@ const DiscountTable = () => {
     }
   };
 
-  // Delete a discount
+  // Delete a discounts
   const deleteDiscount = async (id) => {
     // Display confirmation dialog
     const result = await Swal.fire({
