@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2";//
 
 export default function UpdateDiscountPopup({ discount, onClose, onUpdate }) {
   const [discountTitle, setDiscountTitle] = useState("");
@@ -113,7 +113,7 @@ export default function UpdateDiscountPopup({ discount, onClose, onUpdate }) {
 
         const data = await response.json();
         Swal.fire("Success", "Discount updated successfully!", "success");
-        onUpdate(data); // Update with the response data
+        onUpdate(data); // Update with the response data.
         onClose();
       } catch (error) {
         Swal.fire(

@@ -62,7 +62,7 @@ function DiscountTable() {
     const urlParams = new URLSearchParams(searchData);
     navigate(`/manager/discount-management?${urlParams.toString()}`);
   };
-
+//
   const handleDelete = async (promotionId) => {
     const result = await Swal.fire({
       title: "Are you sure?",
@@ -87,7 +87,7 @@ function DiscountTable() {
 
         const data = await res.json();
 
-        // Check if response contains success key
+        // Check if response contains success key.
         if (res.status === 200) {
           Swal.fire("Deleted!", "The promotion has been deleted.", "success");
           setPromotions((prev) =>
@@ -121,7 +121,7 @@ function DiscountTable() {
       confirmButtonColor: "#d4a373",
     });
   };
-
+//
   return (
     <motion.div
       initial={{ opacity: 0 }}

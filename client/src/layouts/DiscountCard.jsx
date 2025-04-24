@@ -1,3 +1,4 @@
+//Discount card
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -20,7 +21,7 @@ export default function DiscountCard({
 
   useEffect(() => {
     if (!offer || !offer.endDate) {
-      setTimeLeft("No offer available");
+      setTimeLeft("No offer available");//
       return; // Exit early if offer or endDate is missing
     }
 

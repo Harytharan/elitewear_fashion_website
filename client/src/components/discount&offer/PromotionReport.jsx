@@ -5,6 +5,7 @@ import "jspdf-autotable";
 import { MdFileDownload } from "react-icons/md";
 //import moment from "moment";
 //import "../../assets/css/user/userList.css";
+//
 
 export default function PromotionReport({ promotions }, { searchData }) {
   //trains, which contains an array of train objects and searchData, which likely contains search parameters used to filter the train data

@@ -20,7 +20,7 @@ export default function ItemsforDiscount() {
         const res = await fetch(`/api/inventories/search/get`);
         const data = await res.json();
         setInventories(data);
-        setFilteredInventories(data); // Set initial filtered data
+        setFilteredInventories(data); // Set initial filtered data.
       } catch (error) {
         console.error("Error fetching inventories:", error);
       }
@@ -41,7 +41,7 @@ export default function ItemsforDiscount() {
     setFilteredInventories(filtered);
   };
 
-  // Handle the "Add Discount" button click
+  // Handle the "Add Discount" button click.
   const handleAddDiscount = (inventory) => {
     if (!inventory.haveOffer) {
       navigate("/manager/add-discount", {
@@ -53,7 +53,7 @@ export default function ItemsforDiscount() {
       });
     }
   };
-
+//
   return (
     <>
       <motion.div

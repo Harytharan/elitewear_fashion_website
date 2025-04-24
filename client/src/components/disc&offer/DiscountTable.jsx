@@ -25,7 +25,7 @@ const DiscountTable = () => {
     }
   };
 
-  // Delete a discount
+  // Delete a discounts
   const deleteDiscount = async (id) => {
     // Display confirmation dialog
     const result = await Swal.fire({
@@ -38,7 +38,7 @@ const DiscountTable = () => {
       confirmButtonText: "Yes, delete it!",
     });
 
-    // If the user confirms, proceed with deletion
+    // If the user confirms, proceed with deletio
     if (result.isConfirmed) {
       try {
         await axios.delete(`/api/discount/delete/${id}`);
@@ -55,7 +55,7 @@ const DiscountTable = () => {
     }
   };
 
-  // Download report as CSV
+  // Download report as CSV.
   const downloadReport = () => {
     const csvContent = [
       [
@@ -86,7 +86,7 @@ const DiscountTable = () => {
     saveAs(blob, "discounts_report.csv");
   };
 
-  // Filter discounts based on search query
+  // Filter discounts based on search query.
   const filteredDiscounts = discounts.filter(
     (discount) =>
       discount.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -115,7 +115,7 @@ const DiscountTable = () => {
     handleClosePopup();
   };
 
-  // Handle view more details
+  // Handle view more details.
   const handleViewMoreClick = (discount) => {
     setViewMoreDiscount(discount);
   };
