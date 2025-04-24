@@ -88,7 +88,7 @@ function CreateInventory({ currentUser }) {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Image upload failed (2MB max)",
+              text: "Image upload failed (2MB max)",//
             })
           );
           setUploading(false);
