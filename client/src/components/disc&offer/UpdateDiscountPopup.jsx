@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2";//
 
 export default function UpdateDiscountPopup({ discount, onClose, onUpdate }) {
   const [discountTitle, setDiscountTitle] = useState("");
