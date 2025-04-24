@@ -139,7 +139,7 @@ function UpdateInventory({ currentUser }) {
 
     if (name === "SupplierContact") {
       // Validate that SupplierContact contains only digits and has a maximum of 10 digits
-      if (/^\d*$/.test(value) && value.length <= 10) {
+      if (/^\d*$/.test(value) && value.length <= 10) {//validate
         setFormData({ ...formData, [name]: value });
       } else {
         Swal.fire({
