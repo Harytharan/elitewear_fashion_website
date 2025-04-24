@@ -109,7 +109,7 @@ export default function UpdateOffer() {
         text: "Start date cannot be in the past.",
       });
       return;
-    }
+    }//
 
     if (endDate < today) {
       setLoading(false);
