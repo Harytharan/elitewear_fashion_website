@@ -24,7 +24,7 @@ const Cart = () => {
     setIsLoading(false); // Set loading to false after loading data
   }, []);
 
-  // Function to calculate subtotal
+  // Function to calculate subtotals
   const calculateSubtotal = (items) => {
     const total = items.reduce(
       (acc, item) => acc + item.price * item.quantity,
