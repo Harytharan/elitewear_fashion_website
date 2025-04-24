@@ -72,7 +72,7 @@ export default function AddOffer() {
     const endDate = new Date(formData.endDate);
 
     if (startDate < today) {
-      setLoading(false);//add error message
+      setLoading(false);//add error message.
       Swal.fire({
         icon: "error",
         title: "Invalid Date",
