@@ -86,7 +86,7 @@ const DiscountTable = () => {
     saveAs(blob, "discounts_report.csv");
   };
 
-  // Filter discounts based on search query
+  // Filter discounts based on search query.
   const filteredDiscounts = discounts.filter(
     (discount) =>
       discount.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
