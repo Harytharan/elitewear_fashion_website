@@ -20,13 +20,13 @@ export default function InventoryReport({ inventory }) {
       "Supplier Name",
       "Supplier Contact",
     ];
-    const tableRows = []; //Initializes an empty array tableRows to store rows of data for the table.
+    const tableRows = []; //Initializes an empty array tableRows to store rows of data for the table
 
     inventory
       .slice(0)
       .reverse()
       .map((inventory, index) => {
-        const inventorydata = [
+        const inventorydata = [//inventory table items
           index + 1,
           inventory.ItemName,
           inventory.Category,

@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { SketchPicker } from "react-color";
 import { useNavigate } from "react-router-dom"; // Make sure to use this hook for navigation 
 import { MdDeleteForever } from "react-icons/md";
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";//
 import "tailwindcss/tailwind.css";
 import {
   getDownloadURL,
@@ -54,7 +54,7 @@ function CreateInventory({ currentUser }) {
         Swal.fire({
           icon: "error",
           title: "Invalid Input",
-          text: "Supplier Contact must be a number and contain up to 10 digits.",
+          text: "Supplier Contact must be a number and contain up to 10 digits.",//
         });
       }
     } else {
@@ -88,7 +88,7 @@ function CreateInventory({ currentUser }) {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Image upload failed (2MB max)",
+              text: "Image upload failed (2MB max)",//
             })
           );
           setUploading(false);
@@ -186,7 +186,7 @@ function CreateInventory({ currentUser }) {
       Colors: prevState.Colors.filter((c) => c !== color),
     }));
   };
-
+//code
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -198,7 +198,7 @@ function CreateInventory({ currentUser }) {
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "Reorder Level must be greater than zero.",
+          text: "Reorder Level must be greater than zero.",//
         });
         setLoading(false);
         return;
