@@ -186,7 +186,7 @@ function CreateInventory({ currentUser }) {
       Colors: prevState.Colors.filter((c) => c !== color),
     }));
   };
-
+//code
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
