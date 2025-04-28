@@ -84,7 +84,7 @@ function CreateInventory({ currentUser }) {
         })
         .catch((err) => {
           setFileUploadError(
-            //set the max image size to 2MB
+            //set the max image size to 2MB image
             Swal.fire({
               icon: "error",
               title: "Oops...",
