@@ -245,6 +245,7 @@ function CreateInventory({ currentUser }) {
           title: "Error",
           text: `${data.message}`,
         });
+        //add successfull message
       } else {
         Swal.fire({
           icon: "success",
@@ -264,6 +265,7 @@ function CreateInventory({ currentUser }) {
     }
   };
   console.log("form", formData);
+  // add inventory.
   return (
     <div className="max-w-lg mx-auto p-6 mt-10 bg-PrimaryColor rounded-lg shadow-md">
       <h1 className="text-2xl font-bold text-center text-ExtraDarkColor mb-6">

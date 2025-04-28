@@ -61,7 +61,7 @@ function UpdateInventory({ currentUser }) {
       (files ?? []).length + formData.imageUrls.length < 4
     ) {
       setUploading(true);
-      setFileUploadError(false);//set file update hook
+      setFileUploadError(false);
       const promises = [];
 
       for (let i = 0; i < files.length; i++) {
@@ -146,7 +146,7 @@ function UpdateInventory({ currentUser }) {
           icon: "error",
           title: "Invalid Input",
           text: "Supplier Contact must be a number and contain up to 10 digits.",
-        });
+        });//add phone number validation +94
       }
     } else {
       setFormData({ ...formData, [name]: value });
