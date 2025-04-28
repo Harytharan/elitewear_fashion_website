@@ -200,8 +200,9 @@ function DiscountTable() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
+               // report pattern and design 
             >
-              <table className="w-full border-collapse">
+              <table className="w-full border-collapse"> 
                 <thead>
                   <tr className="bg-DarkColor text-white">
                     <th className="p-3 text-left">Promotion Name</th>
