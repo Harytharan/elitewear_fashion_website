@@ -63,7 +63,7 @@ function DiscountTable() {
     navigate(`/manager/discount-management?${urlParams.toString()}`);
   };
 //
-  const handleDelete = async (promotionId) => {
+  const handleDelete = async (promotionId) => { // message requied 
     const result = await Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
