@@ -81,7 +81,7 @@ export default function AddOffer() {
       return;
     }
 
-    if (endDate < today) {// sweet 
+    if (endDate < today) {// error notification meassgae 
       setLoading(false);
       Swal.fire({
         icon: "error",
