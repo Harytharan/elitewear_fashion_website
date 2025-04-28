@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import { FaCcMastercard } from "react-icons/fa";
 import { FaCcVisa } from "react-icons/fa";
 import { SiAmericanexpress } from "react-icons/si";
-// import generateBill from "../components/GenarateBill";
+//import generateBill from "../components/GenarateBill";
 
 const Checkout = () => {
   const location = useLocation();

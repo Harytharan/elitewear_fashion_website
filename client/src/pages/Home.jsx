@@ -1,4 +1,4 @@
-// Home.js
+
 import React from "react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import Navbar from "../components/Navbar";
@@ -42,7 +42,7 @@ export default function Home() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={componentVariants}>
+        <motion.div variants={componentVariants}> 
           <HomeCon />
         </motion.div>
       </motion.div>

@@ -1,7 +1,7 @@
 import User from "../models/user.model.js";
 import { errorHandler } from "../utils/error.js";
 import bcryptjs from "bcryptjs";
-
+//user controller 
 import mongoose from "mongoose";
 
 export const test = (req, res) => {
@@ -93,14 +93,14 @@ export const getUserSearch = async (req, res, next) => {
   }
 };
 
-//get all Users
+//get all Users from the database
 export const getAllUsers = async (req, res) => {
   const users = await User.find({}).sort({ createdAt: -1 });
 
   res.status(200).json(users);
 };
 
-//delete a user by id
+//delete a user by id, or delete the user
 export const deleteUserByid = async (req, res) => {
   const { id } = req.params;
 
@@ -117,7 +117,7 @@ export const deleteUserByid = async (req, res) => {
   res.status(200).json(user);
 };
 
-// Function to add a new user
+// Function to add a new user,  add the new user into database
 export const addUser = async (req, res) => {
   const { firstname, lastname, username, email, password, usertype, avatar } =
     req.body;

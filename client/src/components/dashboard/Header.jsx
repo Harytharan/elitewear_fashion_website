@@ -1,4 +1,4 @@
-// Header.js
+// Header section.js
 import React from "react";
 import { FaSearch, FaBell } from "react-icons/fa";
 

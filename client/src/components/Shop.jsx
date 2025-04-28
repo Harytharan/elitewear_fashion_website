@@ -10,7 +10,7 @@ export default function Shop() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Slider settings
+  // Slider setting
   const settings = {
     dots: true,
     infinite: true,

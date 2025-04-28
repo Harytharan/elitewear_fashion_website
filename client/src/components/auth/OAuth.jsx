@@ -5,7 +5,7 @@ import { signInSuccess } from "../../redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-
+//Authentication part
 export default function OAuth() {
   const dispatch = useDispatch();
   const navigate = useNavigate();

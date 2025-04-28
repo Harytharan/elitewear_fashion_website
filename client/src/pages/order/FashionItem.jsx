@@ -9,7 +9,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { useSelector } from "react-redux";
 import { TailSpin } from "react-loader-spinner";
-
+//product
 const FashionItem = () => {
   const { id } = useParams(); // Get item ID from URL parameters
   const { currentUser } = useSelector((state) => state.user); // Get user from Redux

@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { FaFacebook } from "react-icons/fa6";
 import { RiTwitterXLine } from "react-icons/ri";
 import { RiInstagramFill } from "react-icons/ri";
-
+//footer section
 export default function Footer() {
   return (
     <footer className=" bg-PrimaryColor text-ExtraDarkColor rounded-t-3xl mt-8 md:mt-0">

@@ -24,7 +24,7 @@ const MyOrders = () => {
   const [expandedOrders, setExpandedOrders] = useState({});
   const { currentUser } = useSelector((state) => state.user);
 
-  // Replace with dynamic userId
+  // Replace with dynamic userId right
 
   useEffect(() => {
     const fetchOrders = async () => {
