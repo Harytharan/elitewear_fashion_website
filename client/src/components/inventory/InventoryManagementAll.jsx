@@ -33,7 +33,7 @@ export default function InventoryManagementAll() {
       [section]: !prev[section],
     }));
   };
-
+// use effect funtion.
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const searchTerm = urlParams.get("searchTerm") || "";
