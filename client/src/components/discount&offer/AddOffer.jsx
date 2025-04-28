@@ -146,7 +146,7 @@ export default function AddOffer() {
         usageLimit: "",
       });
 
-      Swal.fire({
+      Swal.fire({// Success notification 
         icon: "success",
         title: "Success",
         text: "Promotion added successfully",
