@@ -161,7 +161,7 @@ function CreateInventory({ currentUser }) {
     }
   };
 
-  // Function to handle size removal
+  // add  function handle remove size
   const handleRemoveSize = (size) => {
     setFormData((prevState) => ({
       ...prevState,
