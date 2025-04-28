@@ -150,7 +150,7 @@ function CreateInventory({ currentUser }) {
   //   ); // Save to local storage
   // };
 
-  // Function to handle size addition
+  // Function to handle size addition.
   const handleAddSize = () => {
     if (sizeInput && !formData.Sizes.includes(sizeInput)) {
       setFormData((prevState) => ({
