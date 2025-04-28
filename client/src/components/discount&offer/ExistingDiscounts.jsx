@@ -40,7 +40,7 @@ function DiscountTable() {
         const data = await res.json();
         setPromotions(data);
       } catch (error) {
-        console.error("Error fetching promotions:", error);
+        console.error("Error fetching promotions:", error); // error message 
         Swal.fire({
           icon: "error",
           title: "Oops...",
