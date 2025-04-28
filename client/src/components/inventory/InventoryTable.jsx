@@ -35,7 +35,7 @@ function InventoryTable() {
         const data = await res.json();
         setInventories(data);
       } catch (error) {
-        console.error("Error fetching inventories:", error);
+        console.error("Error fetching inventories:", error);//error fetching
       }
       setLoading(false);
     };
