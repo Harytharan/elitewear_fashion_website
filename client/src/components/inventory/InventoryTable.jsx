@@ -18,7 +18,7 @@ function InventoryTable() {
   });
   const [loading, setLoading] = useState(false); // Tracks the loading state while fetching inventory data
   const [inventories, setInventories] = useState([]); // Holds the array of inventories fetched from  server.
-
+// add use effect hooks
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const searchTerm = urlParams.get("searchTerm") || "";
