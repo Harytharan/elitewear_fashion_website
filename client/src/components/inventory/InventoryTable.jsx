@@ -81,6 +81,7 @@ function InventoryTable() {
             console.log(data.message);
             return;
           }
+          // fetch error
           Swal.fire({
             title: "Deleted!",
             text: "The inventory item has been deleted.",
