@@ -48,7 +48,7 @@ export default function InventoryReport({ inventory }) {
     // logo.src = "../../assets/img/Logo14.png";
 
     doc.setFontSize(28).setFont("Mooli", "bold").setTextColor(169, 132, 109);
-    doc.text("FashioNexus", 80, 15);
+    doc.text("ELITEWEAR FASHION", 80, 15);
 
     doc.setFont("helvetica", "normal").setFontSize(20).setTextColor(0, 0, 0);
     doc.text("Inventory Details Report", 65, 25);
