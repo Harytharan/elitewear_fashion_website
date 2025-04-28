@@ -60,7 +60,7 @@ function InventoryTable() {
     const searchQuery = urlParams.toString();  
     navigate(`/admin/inventories?${searchQuery}`); 
   };  
-
+ // add handle  delete fuction
   const handleDelete = async (inventoryId) => { 
     Swal.fire({
       title: "Are you sure?",
