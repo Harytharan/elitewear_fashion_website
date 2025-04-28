@@ -54,7 +54,7 @@ function CreateInventory({ currentUser }) {
         Swal.fire({
           icon: "error",
           title: "Invalid Input",
-          text: "Supplier Contact must be a number and contain up to 10 digits.",//
+          text: "Supplier Contact must be a number and contain up to 10 digits.",//edit the error message phone number
         });
       }
     } else {
