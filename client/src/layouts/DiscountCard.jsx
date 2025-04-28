@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Star, ShoppingCart, Clock } from "lucide-react";
 
-export default function DiscountCard({
+export default function DiscountCard({// important 
   id,
   img,
   name = "No name available",
