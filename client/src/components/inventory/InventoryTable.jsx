@@ -33,36 +33,36 @@ function InventoryTable() {
       try {
         const res = await fetch(`/api/inventories/search/get?${searchQuery}`);
         const data = await res.json();
-        setInventories(data);
-      } catch (error) {
+        setInventories(data); 
+      } catch (error) {  
         console.error("Error fetching inventories:", error);//error fetching
-      }
-      setLoading(false);
-    };
+      }  
+      setLoading(false);  
+    };  
 
-    fetchInventories();
-  }, [location.search]);
+    fetchInventories();   
+  }, [location.search]);   
 
-  const handleChange = (e) => {
-    if (e.target.type === "select-one") {
-      setSearchData({ ...searchData, category: e.target.value });
-    }
-    if (e.target.id === "searchTerm") {
-      setSearchData({ ...searchData, searchTerm: e.target.value });
-    }
-  };
+  const handleChange = (e) => {  
+    if (e.target.type === "select-one") {  
+      setSearchData({ ...searchData, category: e.target.value });  
+    }   
+    if (e.target.id === "searchTerm") {  
+      setSearchData({ ...searchData, searchTerm: e.target.value }); 
+    }  
+  };  
+// add handle submit in serch iteam
+  const handleSubmit = (e) => { 
+    e.preventDefault();   
+    const urlParams = new URLSearchParams();  
+    urlParams.set("searchTerm", searchData.searchTerm);  
+    urlParams.set("category", searchData.category); 
+    const searchQuery = urlParams.toString();  
+    navigate(`/admin/inventories?${searchQuery}`); 
+  };  
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const urlParams = new URLSearchParams();
-    urlParams.set("searchTerm", searchData.searchTerm);
-    urlParams.set("category", searchData.category);
-    const searchQuery = urlParams.toString();
-    navigate(`/admin/inventories?${searchQuery}`);
-  };
-
-  const handleDelete = async (inventoryId) => {
-    Swal.fire({//delete section
+  const handleDelete = async (inventoryId) => { 
+    Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
