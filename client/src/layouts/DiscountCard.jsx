@@ -21,7 +21,7 @@ export default function DiscountCard({
 
   useEffect(() => {
     if (!offer || !offer.endDate) {
-      setTimeLeft("No offer available");///
+      setTimeLeft("No offer available");
       return; 
     }
 
