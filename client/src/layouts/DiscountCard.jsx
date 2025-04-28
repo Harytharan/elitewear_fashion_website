@@ -47,7 +47,7 @@ export default function DiscountCard({
 
   const handleCardClick = () => {
     navigate(`/item/${id}`);
-  };//
+  };
 
   return (
     <motion.div
