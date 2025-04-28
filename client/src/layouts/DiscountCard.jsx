@@ -126,4 +126,4 @@ export default function DiscountCard({
       )}
     </motion.div>
   );
-}
+}//
