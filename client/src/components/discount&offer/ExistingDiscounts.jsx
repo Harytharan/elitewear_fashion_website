@@ -168,7 +168,7 @@ function DiscountTable() {
               >
                 <FaFilter /> Filter
               </button>
-              <PromotionReport
+              <PromotionReport // report generate function code 
                 promotions={promotions}
                 searchData={searchData}
                 render={({ onClick }) => (
