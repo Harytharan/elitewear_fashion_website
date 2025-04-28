@@ -89,7 +89,7 @@ export default function InventoryManagementAll() {
         try {
           const res = await fetch(`/api/inventories/${inventoryId}`, {
             method: "DELETE",
-          });
+          });//set fetch api.
           const data = await res.json();
           if (data.success === false) {
             console.log(data.message);
