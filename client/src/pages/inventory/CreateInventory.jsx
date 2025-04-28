@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { SketchPicker } from "react-color";
 import { useNavigate } from "react-router-dom"; // Make sure to use this hook for navigation 
 import { MdDeleteForever } from "react-icons/md";
-import { useSelector } from "react-redux";//
+import { useSelector } from "react-redux";//use selector
 import "tailwindcss/tailwind.css";
 import {
   getDownloadURL,
@@ -11,8 +11,8 @@ import {
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
-import { app } from "../../firebase";
-
+import { app } from "../../firebase";//import fire base
+// add items in create inventory fuction.
 function CreateInventory({ currentUser }) {
   const [formData, setFormData] = useState({
     ItemName: "",
@@ -54,7 +54,7 @@ function CreateInventory({ currentUser }) {
         Swal.fire({
           icon: "error",
           title: "Invalid Input",
-          text: "Supplier Contact must be a number and contain up to 10 digits.",//
+          text: "Supplier Contact must be a number and contain up to 10 digits.",//edit the error message phone number
         });
       }
     } else {
@@ -84,7 +84,7 @@ function CreateInventory({ currentUser }) {
         })
         .catch((err) => {
           setFileUploadError(
-            //set the max image size to 2MB
+            //set the max image size to 2MB image
             Swal.fire({
               icon: "error",
               title: "Oops...",

@@ -46,11 +46,11 @@ export default function InventoryManagementAll() {
       setLoading(true);
       const searchQuery = urlParams.toString();
       try {
-        const res = await fetch(`/api/inventories/search/get?${searchQuery}`);
+        const res = await fetch(`/api/inventories/search/get?${searchQuery}`);//get serch api
         const data = await res.json();
         setInventories(data);
       } catch (error) {
-        console.error("Error fetching inventories:", error);
+        console.error("Error fetching inventories:", error);// set error.
       }
       setLoading(false);
     };
@@ -89,7 +89,7 @@ export default function InventoryManagementAll() {
         try {
           const res = await fetch(`/api/inventories/${inventoryId}`, {
             method: "DELETE",
-          });
+          });//set fetch api.
           const data = await res.json();
           if (data.success === false) {
             console.log(data.message);
@@ -97,7 +97,7 @@ export default function InventoryManagementAll() {
           }
           Swal.fire({
             title: "Deleted!",
-            text: "The inventory item has been deleted.",
+            text: "The inventory item has been deleted.",//error message
             icon: "success",
           });
           setInventories((prev) =>

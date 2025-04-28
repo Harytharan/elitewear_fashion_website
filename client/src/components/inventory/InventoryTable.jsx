@@ -16,9 +16,9 @@ function InventoryTable() {
     sort: "created_at",
     order: "desc",
   });
-  const [loading, setLoading] = useState(false); // Tracks the loading state while fetching inventory data.
-  const [inventories, setInventories] = useState([]); // Holds the array of inventories fetched from the server.
-
+  const [loading, setLoading] = useState(false); // Tracks the loading state while fetching inventory data
+  const [inventories, setInventories] = useState([]); // Holds the array of inventories fetched from  server.
+// add use effect hooks
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const searchTerm = urlParams.get("searchTerm") || "";
@@ -33,36 +33,36 @@ function InventoryTable() {
       try {
         const res = await fetch(`/api/inventories/search/get?${searchQuery}`);
         const data = await res.json();
-        setInventories(data);
-      } catch (error) {
-        console.error("Error fetching inventories:", error);
-      }
-      setLoading(false);
-    };
+        setInventories(data); 
+      } catch (error) {  
+        console.error("Error fetching inventories:", error);//error fetching
+      }  
+      setLoading(false);  
+    };  
 
-    fetchInventories();
-  }, [location.search]);
+    fetchInventories();   
+  }, [location.search]);   
 
-  const handleChange = (e) => {
-    if (e.target.type === "select-one") {
-      setSearchData({ ...searchData, category: e.target.value });
-    }
-    if (e.target.id === "searchTerm") {
-      setSearchData({ ...searchData, searchTerm: e.target.value });
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const urlParams = new URLSearchParams();
-    urlParams.set("searchTerm", searchData.searchTerm);
-    urlParams.set("category", searchData.category);
-    const searchQuery = urlParams.toString();
-    navigate(`/admin/inventories?${searchQuery}`);
-  };
-
-  const handleDelete = async (inventoryId) => {
-    Swal.fire({//delete section
+  const handleChange = (e) => {  
+    if (e.target.type === "select-one") {  
+      setSearchData({ ...searchData, category: e.target.value });  
+    }   
+    if (e.target.id === "searchTerm") {  
+      setSearchData({ ...searchData, searchTerm: e.target.value }); 
+    }  
+  };  
+// add handle submit in serch iteam
+  const handleSubmit = (e) => { 
+    e.preventDefault();   
+    const urlParams = new URLSearchParams();  
+    urlParams.set("searchTerm", searchData.searchTerm);  
+    urlParams.set("category", searchData.category); 
+    const searchQuery = urlParams.toString();  
+    navigate(`/admin/inventories?${searchQuery}`); 
+  };  
+ // add handle  delete fuction.
+  const handleDelete = async (inventoryId) => { 
+    Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
@@ -81,6 +81,7 @@ function InventoryTable() {
             console.log(data.message);
             return;
           }
+          // fetch error
           Swal.fire({
             title: "Deleted!",
             text: "The inventory item has been deleted.",
@@ -96,7 +97,7 @@ function InventoryTable() {
     });
   };
 
-  return (// add side bar
+  return (// add some items
     <div
       className="dashboard"
       style={{ background: "#dde6ed", padding: "20px" }}
