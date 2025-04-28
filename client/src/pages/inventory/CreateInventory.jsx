@@ -12,7 +12,7 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../../firebase";//import fire base
-// add items in create inventory fuction
+// add items in create inventory fuction.
 function CreateInventory({ currentUser }) {
   const [formData, setFormData] = useState({
     ItemName: "",
