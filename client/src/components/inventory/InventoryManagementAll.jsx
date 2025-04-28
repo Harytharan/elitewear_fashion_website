@@ -97,7 +97,7 @@ export default function InventoryManagementAll() {
           }
           Swal.fire({
             title: "Deleted!",
-            text: "The inventory item has been deleted.",
+            text: "The inventory item has been deleted.",//error message
             icon: "success",
           });
           setInventories((prev) =>
