@@ -131,14 +131,14 @@ function CreateInventory({ currentUser }) {
       );
     });
   };
-
+  // add handle  remove function
   const handleremoveImage = (index) => {
     //Removes an image from the imageUrls array when the user clicks on a remove button
     setFormData({
       ...formData,
       imageUrls: formData.imageUrls.filter((_, i) => i !== index),
     });
-  };
+  }
 
   // const handleImageUpload = (e) => {
   //   const files = Array.from(e.target.files);
