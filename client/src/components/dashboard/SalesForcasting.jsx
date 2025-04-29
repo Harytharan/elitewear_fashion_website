@@ -47,7 +47,7 @@ export default function SalesForcasting() {
       transition={{ duration: 0.5 }}
     >
       <h1
-        className="text-4xl font-bold mb-2"
+        
         style={{ color: "#a98467" }} // ExtraDarkColor for the main heading
       >
         Sales Forcasting System
