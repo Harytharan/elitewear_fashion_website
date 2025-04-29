@@ -53,7 +53,7 @@ export default function DashboardLayout() {
             path="/inventory-management/create"
             element={<CreateInventory />}
           />
-          
+          <Route path="/order-management" element={<OrderManagement />} />
           <Route
             path="/discount-management/*"
             element={<DiscountManagement />}
