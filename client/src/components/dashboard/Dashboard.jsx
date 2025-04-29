@@ -9,7 +9,7 @@ const data = {
   datasets: [
     {
       label: "Sales",
-      data: [500, 400, 200, 500, 700], //HGFTUF
+      data: [500, 400, 200, 500, 700], 
       backgroundColor: "#a98467",
     },
   ],
