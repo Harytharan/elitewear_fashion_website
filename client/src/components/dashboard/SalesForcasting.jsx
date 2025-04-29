@@ -68,7 +68,7 @@ export default function SalesForcasting() {
           }}
           onClick={() => setActiveTab("auto")}
         >
-          
+          Auto Forecast
         </div>
         <div
           className={`cursor-pointer px-4 py-2 -mb-1 ${
