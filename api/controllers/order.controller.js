@@ -3,16 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 // Helper function to generate unique 6-digit order ID starting with 'O'
 export const createOrder = async (req, res) => {
   try {
-    const {
-      userId,
-      items,
-      total,
-      customerInfo,
-      deliveryInfo,
-      paymentMethod,
-      cardInfo,
-    } = req.body;
-
+    
     if (
       !userId ||
       !items ||
