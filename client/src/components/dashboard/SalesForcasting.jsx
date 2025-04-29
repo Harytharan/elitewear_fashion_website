@@ -22,7 +22,12 @@ export default function SalesForcasting() {
         return <SalesPrediction />;
       case "manual":
         return (
-
+          <motion.div
+            variants={tabVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
             {/* Replace with your View Items component */}
             <ManualPrediction />
           </motion.div>
