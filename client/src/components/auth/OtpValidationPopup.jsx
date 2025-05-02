@@ -46,18 +46,27 @@ export default function OtpValidationPopup({ onClose, onVerifyOtp }) {
     }
     setLoading(true);
     try {
-      await onVerifyOtp(otpString);
-      Swal.fire({
+      const response = await onVerifyOtp(otpString);
+      if (response.success){
+        Swal.fire({
         icon: "success",
         title: "OTP Verified",
         text: "Your OTP has been successfully verified.",
         confirmButtonColor: "#4A5568",
       });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid OTP",
+        text: response.message || "The OTP you entered is incorrect.",
+        confirmButtonColor: "#4A5568",
+      });
+    }
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Verification Failed",
-        text: "Failed to verify OTP. Please try again.",
+        text: "The OTP you entered is incorrect.",
         confirmButtonColor: "#4A5568",
       });
     } finally {

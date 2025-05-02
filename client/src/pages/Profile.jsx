@@ -1,4 +1,5 @@
-//prfile section
+// Profile.jsx
+
 import { useSelector, useDispatch } from "react-redux";
 import { useRef, useState, useEffect } from "react";
 import { app } from "../firebase";
@@ -15,13 +16,9 @@ import {
   deleteUserFailure,
   deleteUserstart,
   deleteUserSuccess,
-  signOutUserstart,
-  signOutUserFailure,
-  signOutUserSuccess,
 } from "../redux/user/userSlice";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import { FaUserEdit, FaTrash, FaCheckCircle, FaSpinner } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -32,14 +29,32 @@ export default function Profile() {
   const [file, setFile] = useState(undefined);
   const [filePerc, setFilePerc] = useState(0);
   const [fileUploadError, setFileUploadError] = useState(false);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    avatar: "",
+    password: "",
+  });
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (file) {
-      handleFileUpload(file);
+    if (currentUser) {
+      setFormData({
+        firstname: currentUser.firstname || "",
+        lastname: currentUser.lastname || "",
+        username: currentUser.username || "",
+        email: currentUser.email || "",
+        avatar: currentUser.avatar || "",
+        password: "",
+      });
     }
+  }, [currentUser]);
+
+  useEffect(() => {
+    if (file) handleFileUpload(file);
   }, [file]);
 
   const handleFileUpload = (file) => {
@@ -51,8 +66,7 @@ export default function Profile() {
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setFilePerc(Math.round(progress));
       },
       (error) => {
@@ -60,7 +74,7 @@ export default function Profile() {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
-          setFormData({ ...formData, avatar: downloadURL })
+          setFormData((prev) => ({ ...prev, avatar: downloadURL }))
         );
       }
     );
@@ -131,11 +145,7 @@ export default function Profile() {
             return;
           }
           dispatch(deleteUserSuccess(data));
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your account has been deleted.",
-            icon: "success",
-          });
+          Swal.fire("Deleted!", "Your account has been deleted.", "success");
         } catch (error) {
           dispatch(deleteUserFailure(error.message));
         }
@@ -146,19 +156,14 @@ export default function Profile() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex-grow flex items-center justify-center p-6"
-        style={{ backgroundColor: "" }}
       >
         <div className="bg-SecondaryColor p-6 rounded-xl mt-20 shadow-xl max-w-lg w-full">
-          <h1
-            className="text-3xl font-bold text-center mb-6"
-            style={{ color: "#a98467" }}
-          >
+          <h1 className="text-3xl font-bold text-center mb-6" style={{ color: "#a98467" }}>
             Profile
           </h1>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -171,7 +176,7 @@ export default function Profile() {
                 accept="image/*"
               />
               <motion.img
-                src={formData.avatar || currentUser.avatar}
+                src={formData.avatar}
                 alt="profile"
                 className="rounded-full h-24 w-24 object-cover cursor-pointer mb-2"
                 onClick={() => fileRef.current.click()}
@@ -195,7 +200,7 @@ export default function Profile() {
                 id="firstname"
                 placeholder="First Name"
                 className="border p-3 rounded-lg w-full"
-                defaultValue={currentUser.firstname}
+                value={formData.firstname}
                 onChange={handleChange}
               />
               <input
@@ -203,7 +208,7 @@ export default function Profile() {
                 id="lastname"
                 placeholder="Last Name"
                 className="border p-3 rounded-lg w-full"
-                defaultValue={currentUser.lastname}
+                value={formData.lastname}
                 onChange={handleChange}
               />
             </div>
@@ -213,7 +218,7 @@ export default function Profile() {
               id="username"
               placeholder="Username"
               className="border p-3 rounded-lg w-full"
-              defaultValue={currentUser.username}
+              value={formData.username}
               onChange={handleChange}
             />
 
@@ -222,9 +227,18 @@ export default function Profile() {
               id="email"
               placeholder="Email"
               className="border p-3 rounded-lg w-full"
-              defaultValue={currentUser.email}
+              value={formData.email}
               onChange={handleChange}
               readOnly={true}
+            />
+
+            <input
+              type="password"
+              id="password"
+              placeholder="New Password"
+              className="border p-3 rounded-lg w-full"
+              value={formData.password}
+              onChange={handleChange}
             />
 
             <button
@@ -232,11 +246,7 @@ export default function Profile() {
               className="w-full bg-[#d4a373] text-white p-3 rounded-lg flex items-center justify-center hover:bg-[#a98467] transition duration-300"
               disabled={loading}
             >
-              {loading ? (
-                <FaSpinner className="animate-spin mr-2" />
-              ) : (
-                <FaUserEdit className="mr-2" />
-              )}
+              {loading ? <FaSpinner className="animate-spin mr-2" /> : <FaUserEdit className="mr-2" />}
               {loading ? "Updating..." : "Update Profile"}
             </button>
 
@@ -251,11 +261,9 @@ export default function Profile() {
 
             {updateSuccess && (
               <p className="text-center text-green-600">
-                <FaCheckCircle className="inline mr-1" /> Profile updated
-                successfully!
+                <FaCheckCircle className="inline mr-1" /> Profile updated successfully!
               </p>
             )}
-
             {error && (
               <p className="text-center text-red-600">
                 <FaCheckCircle className="inline mr-1" /> {error}
@@ -264,7 +272,6 @@ export default function Profile() {
           </form>
         </div>
       </motion.div>
-
       <Footer />
     </div>
   );
