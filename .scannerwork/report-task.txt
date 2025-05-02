@@ -1,0 +1,6 @@
+projectKey=itpm-project
+serverUrl=http://localhost:9000
+serverVersion=8.9.10.61524
+dashboardUrl=http://localhost:9000/dashboard?id=itpm-project
+ceTaskId=AZaCTRZLBp61c8a6qE0o
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZaCTRZLBp61c8a6qE0o

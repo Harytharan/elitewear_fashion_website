@@ -13,6 +13,7 @@ export default function SignUp({ onClose, onSignIn }) {
   });
   const [isOtpModalOpen, setIsOtpModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [otpError, setOtpError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -88,10 +89,14 @@ export default function SignUp({ onClose, onSignIn }) {
       const contentType = res.headers.get("content-type");
       if (contentType && contentType.includes("application/json")) {
         const data = await res.json();
+        console.log(data);
+        
         if (data.success) {
+          setOtpError(""); // clear error
           await handleSignUp();
         } else {
-          Swal.fire("Error", data.message, "error");
+          setOtpError(data.message || "Invalid OTP.");
+          handleOtpError(); 
         }
       } else {
         const errorText = await res.text();
@@ -104,6 +109,19 @@ export default function SignUp({ onClose, onSignIn }) {
       setLoading(false);
     }
   };
+
+  const handleOtpError = () => {
+    // Display a message indicating that the OTP entered is wrong
+    Swal.fire({
+      icon: "error",
+      title: "Invalid OTP",
+      text: "Your entered OTP is wrong. Please check and try again.",
+      confirmButtonColor: "#4A5568",
+    });
+  };
+  
+
+  
 
   const handleSignUp = async () => {
     try {
@@ -236,6 +254,7 @@ export default function SignUp({ onClose, onSignIn }) {
         <OtpValidationPopup
           onClose={() => setIsOtpModalOpen(false)}
           onVerifyOtp={handleVerifyOtp}
+          error={otpError}
         />
       )}
     </AnimatePresence>
