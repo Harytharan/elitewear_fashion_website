@@ -172,14 +172,20 @@ export default function OrderManagement() {
           const response = await axios.put(`/api/order/status/${id}`, {
             status: newStatus,
           });
-
+  
           await send("service_fjpvjh9", "template_1x528d6", {
             to_email: order.customerInfo.email,
             status: newStatus,
           });
-
+  
+          // ✅ Update the orders state locally
+          setOrders((prevOrders) =>
+            prevOrders.map((o) =>
+              o._id === id ? { ...o, status: newStatus } : o
+            )
+          );
+  
           Swal.fire("Saved!", "", "success");
-          window.location.reload();
         } catch (error) {
           console.log(error);
           Swal.fire("Error saving changes", "", "error");
@@ -189,6 +195,7 @@ export default function OrderManagement() {
       }
     });
   };
+  
 
   useEffect(() => {
     const serchOrder = orders.filter((item) =>
