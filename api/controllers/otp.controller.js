@@ -4,8 +4,8 @@ import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "harytharan24@gmail.com",  
-    pass: "mjhd lnar hjsi rwnd", 
+    user: "",  
+    pass: "", 
   },
 });
 
@@ -31,7 +31,7 @@ export const sendOTP = (req, res) => {
   otpMap.set(email, otp); // Store OTP for the email
 
   const mailOptions = {
-    from: "harytharan24@gmail.com",  // sender email
+    from: "",  // sender email
     to: email,
     subject: "Email Verification OTP",
     html: `
