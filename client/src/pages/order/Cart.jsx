@@ -65,14 +65,25 @@ const Cart = () => {
 
   // Handle apply promo code
   const handleApplyPromo = () => {
-    // Example: Apply a 10% discount if the promo code is "SAVE10"
-    if (promoCode === "SAVE10") {
-      setDiscount(subtotal * 0.1);
+    // Extract number from promo code (e.g., "SAVE30" → 30)
+    const match = promoCode.match(/^SAVE(\d{1,2})$/);
+  
+    if (match) {
+      const discountPercent = parseInt(match[1]);
+  
+      // Only allow 10, 20, 30, 40, or 50
+      if ([10, 20, 30, 40, 50].includes(discountPercent)) {
+        setDiscount((subtotal * discountPercent) / 100);
+      } else {
+        setDiscount(0);
+        alert("Invalid promo code! Valid options: SAVE10, SAVE20, SAVE30, SAVE40, SAVE50");
+      }
     } else {
       setDiscount(0);
-      alert("Invalid promo code!");
+      alert("Invalid promo code format! Use something like SAVE20");
     }
   };
+  
 
   // Show loading spinner if loading
   if (isLoading) {

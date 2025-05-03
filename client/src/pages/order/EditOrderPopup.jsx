@@ -3,12 +3,14 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
 import SimpleBar from "simplebar-react";
-import "simplebar-react/dist/simplebar.min.css"; // Import SimpleBar styles
+import "simplebar-react/dist/simplebar.min.css";
 
 const EditOrderPopup = ({ order, onClose, onUpdate }) => {
   const [customer, setCustomer] = useState(order.customerInfo || {});
   const [delivery, setDelivery] = useState(order.deliveryInfo || {});
   const [items, setItems] = useState(order.items || []);
+
+  const isEditable = order.status === "pending";
 
   const handleInputChange = (e, field, isCustomer = true) => {
     const { name, value } = e.target;
@@ -57,9 +59,15 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
       >
         <SimpleBar style={{ maxHeight: "80vh", width: "100%" }}>
           <div className="bg-PrimaryColor rounded-lg shadow-lg p-8 max-w-4xl w-full">
-            <h2 className="text-2xl font-bold mb-6 text-darkColor">
+            <h2 className="text-2xl font-bold mb-2 text-darkColor">
               Edit Order
             </h2>
+
+            {!isEditable && (
+              <p className="text-red-600 mb-4">
+                You can only edit orders with <strong>Pending</strong> status.
+              </p>
+            )}
 
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div>
@@ -73,6 +81,7 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
                   onChange={(e) => handleInputChange(e, "name")}
                   className="w-full p-3 border border-secondaryColor rounded mb-2"
                   placeholder="Name"
+                  disabled={!isEditable}
                 />
                 <input
                   type="email"
@@ -81,6 +90,7 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
                   onChange={(e) => handleInputChange(e, "email")}
                   className="w-full p-3 border border-secondaryColor rounded mb-2"
                   placeholder="Email"
+                  disabled={!isEditable}
                 />
                 <input
                   type="text"
@@ -89,10 +99,11 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
                   onChange={(e) => handleInputChange(e, "mobile")}
                   className="w-full p-3 border border-secondaryColor rounded mb-2"
                   placeholder="Mobile"
+                  disabled={!isEditable}
                 />
               </div>
 
-              {delivery && delivery.address && (
+              {delivery  && (
                 <div>
                   <h3 className="font-semibold mb-2 text-darkColor">
                     Delivery Information
@@ -104,6 +115,7 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
                     onChange={(e) => handleInputChange(e, "address", false)}
                     className="w-full p-3 border border-secondaryColor rounded mb-2"
                     placeholder="Address"
+                    disabled={!isEditable}
                   />
                   <input
                     type="text"
@@ -112,14 +124,18 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
                     onChange={(e) => handleInputChange(e, "city", false)}
                     className="w-full p-3 border border-secondaryColor rounded mb-2"
                     placeholder="City"
+                    disabled={!isEditable}
                   />
                   <input
                     type="text"
                     name="postalCode"
                     value={delivery.postalCode || ""}
-                    onChange={(e) => handleInputChange(e, "postalCode", false)}
+                    onChange={(e) =>
+                      handleInputChange(e, "postalCode", false)
+                    }
                     className="w-full p-3 border border-secondaryColor rounded mb-2"
                     placeholder="Postal Code"
+                    disabled={!isEditable}
                   />
                 </div>
               )}
@@ -144,6 +160,7 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
                     }
                     className="w-full p-3 border border-secondaryColor rounded mb-2"
                     placeholder="Size"
+                    disabled={!isEditable}
                   />
                   <label>Color: </label>
                   <input
@@ -153,7 +170,7 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
                       handleItemChange(index, "color", e.target.value)
                     }
                     className="w-6 h-6 border border-none rounded-3xl"
-                    placeholder="Color"
+                    disabled={!isEditable}
                   />
                 </div>
               ))}
@@ -162,7 +179,12 @@ const EditOrderPopup = ({ order, onClose, onUpdate }) => {
             <div className="flex justify-end space-x-2">
               <button
                 onClick={handleUpdate}
-                className="bg-DarkColor hover:bg-ExtraDarkColor text-white px-6 py-3 rounded"
+                className={`px-6 py-3 rounded text-white ${
+                  isEditable
+                    ? "bg-DarkColor hover:bg-ExtraDarkColor"
+                    : "bg-gray-400 cursor-not-allowed"
+                }`}
+                disabled={!isEditable}
               >
                 Save
               </button>
