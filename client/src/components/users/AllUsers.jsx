@@ -164,7 +164,7 @@ const AllUsers = () => {
     };
 
     // Example userCounts data
-    const userCounts = { total: 5, customers: 4, managers: 1 };
+    // const userCounts = { total: 5, customers: 4, managers: 1 };
 
     drawCard(20, cardY, "Total Users", userCounts.total);
     drawCard(

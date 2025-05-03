@@ -61,10 +61,13 @@ const AddUserPopup = ({ closePopup, refreshUsers }) => {
 
     setLoading(true);
     try {
-      await axios.post("/api/user/add", {
+      const response = await axios.post("/api/user/add", {
         ...formData,
         ismanager: formData.usertype === "manager",
       });
+    
+      console.log("API response:", response);
+    
       setLoading(false);
       Swal.fire({
         icon: "success",
@@ -76,7 +79,7 @@ const AddUserPopup = ({ closePopup, refreshUsers }) => {
       closePopup();
     } catch (error) {
       setLoading(false);
-      console.error("Error adding user:", error);
+      console.error("Error adding user:", error.response || error);
       Swal.fire({
         icon: "error",
         title: "Error!",
@@ -84,6 +87,7 @@ const AddUserPopup = ({ closePopup, refreshUsers }) => {
         confirmButtonColor: "#d4a373",
       });
     }
+    
   };
 
   const inputFields = [
