@@ -83,8 +83,8 @@ app.use((err, req, res, next) => {
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "harytharan24@gmail.com",
-    pass: "mjhd lnar hjsi rwnd",
+    user: "",
+    pass: "d",
   },
 });
 
@@ -99,7 +99,7 @@ app.post("/api/auth/sendotp", (req, res) => {
   otpMap.set(email, otp);
 
   const mailOptions = {
-    from: "harytharan24@gmail.com",
+    from: "",
     to: email,
     subject: "Email Verification OTP",
     html: `<p>Your OTP is: <strong>${otp}</strong></p>`,
