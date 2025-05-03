@@ -37,8 +37,41 @@ const AddUserPopup = ({ closePopup, refreshUsers }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Validation checks
+  
+    const nameRegex = /^[a-zA-Z]+$/;
+    const usernameRegex = /^[a-zA-Z0-9_]{3,}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  
+    if (!nameRegex.test(formData.firstname)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid First Name!",
+        text: "First name should contain only letters.",
+        confirmButtonColor: "#d4a373",
+      });
+      return;
+    }
+  
+    if (!nameRegex.test(formData.lastname)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Last Name!",
+        text: "Last name should contain only letters.",
+        confirmButtonColor: "#d4a373",
+      });
+      return;
+    }
+  
+    if (!usernameRegex.test(formData.username)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Username!",
+        text: "Username must be at least 3 characters and can contain letters, numbers, and underscores.",
+        confirmButtonColor: "#d4a373",
+      });
+      return;
+    }
+  
     if (!validateEmail(formData.email)) {
       Swal.fire({
         icon: "error",
@@ -48,26 +81,36 @@ const AddUserPopup = ({ closePopup, refreshUsers }) => {
       });
       return;
     }
-
-    if (formData.password.length < 8) {
+  
+    if (!passwordRegex.test(formData.password)) {
       Swal.fire({
         icon: "error",
         title: "Weak Password!",
-        text: "Password must be at least 8 characters long.",
+        text: "Password must be at least 8 characters and contain both letters and numbers.",
         confirmButtonColor: "#d4a373",
       });
       return;
     }
-
+  
+    if (!["customer", "manager"].includes(formData.usertype)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid User Type!",
+        text: "Please select a valid user type.",
+        confirmButtonColor: "#d4a373",
+      });
+      return;
+    }
+  
     setLoading(true);
     try {
       const response = await axios.post("/api/user/add", {
         ...formData,
         ismanager: formData.usertype === "manager",
       });
-    
+  
       console.log("API response:", response);
-    
+  
       setLoading(false);
       Swal.fire({
         icon: "success",
@@ -87,8 +130,8 @@ const AddUserPopup = ({ closePopup, refreshUsers }) => {
         confirmButtonColor: "#d4a373",
       });
     }
-    
   };
+  
 
   const inputFields = [
     { name: "firstname", label: "First Name", icon: FaUser },
